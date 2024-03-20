@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 4</title>
+    <script language="JavaScript">
+    function kiemtradl(){
+ ten=document.frmBT4.txtTen.value;
+ tuoi=document.frmBT4.txtTuoi.value;
+if (ten=="") //kiểm tra tên
+
+{
+    alert("Bạn chưa nhập tên");
+    document.frmBT4.txtTen.focus();
+    return false;
+}else if(tuoi=="")  //kiểm tra tuổi rỗng
+  {
+alert("Bạn chưa nhập tuổi");
+document.frmBT4.txtTuoi.focus();
+return false;
+
+} else if(isNaN(tuoi) || eval(tuoi)<0)
+{
+alert("Tuổi phải là kiểu số dương");
+document.frmBT4.txtTuoi.value="";
+document.frmBT4.txtTuoi.focus();
+return false;
+}
+
+else{ //nếu nhập đúng
+    var today = new Date();
+    ns=today.getFullYear() - eval(tuoi);
+    alert("Chào bạn "+ten+", Bạn đã "+tuoi+" tuổi rồi. Bạn sinh năm "+ns);
+    return true;
+}
+    }
+
+    </script>
+</head>
+<body>
+<form action="" method="post" name="frmBT4" onsubmit="return kiemtradl();">
+    Tên <input type="text" size="20" name="txtTen" placeholder="Hãy nhập họ tên của bạn"/>
+    Tuổi <input type="text" size="6" name="txtTuoi"/>
+    <input type="submit" name="sbmGui" value="Gửi"/>
+</form>
+<marquee>Hello</marquee>   
+</body>
+</html>

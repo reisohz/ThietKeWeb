@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THÔNG TIN SINH VIÊN</title>
+<script language="JavaScript">
+function nhaplieu(){
+    event.preventDefault();
+    ht=document.frmBT8.hoten.value;
+    tdn=document.frmBT8.username.value;
+    pw=document.frmBT8.password.value;
+    qq=document.frmBT8.tinhthanh.value;
+
+   if(ht==""){
+        alert("Bạn chưa nhập họ tên");
+        document.frmBT8.hoten.focus();
+        return false;
+    }  
+    else if(tdn==""){
+            alert("Bạn chưa nhập tên đăng nhập");
+            document.frmBT8.username.focus();
+            return false;
+        }
+    else if(tdn.length <=9){
+        alert("Tên đăng nhập phải có ít nhất 9 ký tự");
+        document.frmBT8.username.value="";
+        document.frmBT8.username.focus();
+        return false;
+    }  
+        else if(pw==""){
+        alert("Bạn chưa nhập mật khẩu");
+        document.frmBT8.password.focus();
+        return false;
+    }
+    else {
+        document.getElementById("hten").innerHTML=ht;
+        document.getElementById("tdangnhap").innerHTML=tdn;
+        document.getElementById("matkhau").innerHTML=pw;
+        document.getElementById("qquan").innerHTML=qq;
+}
+}
+
+</script>
+</head>
+<body>
+    <h1><center>THÔNG TIN ĐĂNG KÝ</center></h1>
+    <form action="" method="post" name="frmBT8" onsubmit="return nhaplieu();">
+     <p align="center"> Họ và tên: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" size="20" name="hoten"/></p>
+     <p align="center">Tên đăng nhập: &nbsp;&nbsp;&nbsp; <input type="text" size="20" name="username"/></p>
+     <p align="center">Mật khẩu: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="text" size="20" name="password"/></p>
+     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quê quán:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="tinhthanh"> 
+            <option value="Hà Nội">Hà Nội</option>
+            <option value="Trà Vinh">Trà Vinh</option>
+            <option value="TPHCM">TPHCM</option>    
+            </select>
+        </p>
+            <br>
+        <center><input type="submit" name="sbmGui" value="Đồng ý"></center>
+    </p>
+    </form>
+    <br>
+    <h2 align="center">THÔNG TIN BẠN VỪA NHẬP</h2>
+    <table border="1" width="40%" align="center" id="infoTable">
+<tr>
+    <th>Họ tên</th>
+    <th>Tên đăng nhập</th>
+    <th>Mật khẩu</th>
+    <th>Quê quán</th>
+ </tr>
+<tr>
+    <td id="hten"></td>
+    <td id="tdangnhap"></td>
+    <td id="matkhau"></td>
+    <td id="qquan"></td>
+</tr>
+    </table>
+    
+</body>
+</html>
